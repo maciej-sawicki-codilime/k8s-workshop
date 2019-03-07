@@ -3,16 +3,16 @@ kind: Deployment
 metadata:
   name: example-deployment
   labels:
-    app: example-deployment
+    app: bomba
 spec:
-  replicas: 3
+  replicas: 1
   selector:
     matchLabels:
-      app: example
+      app: bomba
   template:
     metadata:
       labels:
-        app: example
+        app: bomba
     spec:
       containers:
       - name: example-container
