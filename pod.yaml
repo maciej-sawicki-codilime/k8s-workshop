@@ -8,3 +8,20 @@ spec:
   containers:
   - name: example-container
     image: gcr.io/google-samples/hello-app:2.0
+    env:
+     - name: foo
+       value: bar
+     - name: SPECIAL_LEVEL_KEY
+       valueFrom:
+         secretKeyRef:
+           # The ConfigMap containing the value you want to assign to SPECIAL_LEVEL_KEY
+           name: secret
+           # Specify the key associated with the value
+           key: color
+    volumeMounts:
+     - mountPath: /test-ebs
+       name: test-volume
+  volumes:
+  - name: test-volume
+    persistentVolumeClaim:
+        claimName: pvc2

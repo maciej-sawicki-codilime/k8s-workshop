@@ -5,14 +5,14 @@ metadata:
   labels:
     app: bomba
 spec:
-  replicas: 1
+  replicas: 3
   selector:
     matchLabels:
-      app: bomba
+      app: bomba2
   template:
     metadata:
       labels:
-        app: bomba
+        app: bomba2
     spec:
       containers:
       - name: example-container
